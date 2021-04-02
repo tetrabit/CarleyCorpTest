@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Bees.unity
+    guid: 13db2f06b40efbc4894d816dfab630f7
   m_configObjects: {}
