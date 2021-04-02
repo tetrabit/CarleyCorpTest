@@ -47,6 +47,7 @@ public class Bee : MonoBehaviour
 
     private void Update()
     {
+        _distanceToFlower = Vector3.Distance(transform.position, _flower.transform.position);
         if(_simulationData.Simulate)
         {
             _currentTime += Time.deltaTime;
@@ -64,7 +65,6 @@ public class Bee : MonoBehaviour
                     break;
             }
 
-            _distanceToFlower = Vector3.Distance(transform.position, _flower.transform.position);
             if (!_arrived && _distanceToFlower == 0)
             {
                 _simulatedArrivalTime = _currentTime;
