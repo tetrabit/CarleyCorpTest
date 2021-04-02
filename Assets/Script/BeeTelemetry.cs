@@ -14,6 +14,8 @@ public class BeeTelemetry : MonoBehaviour
     private TextMeshProUGUI _beeC;
     [SerializeField]
     private TextMeshProUGUI _beeD;
+    [SerializeField]
+    private TextMeshProUGUI _simulationTime;
     private SimulationData _simulationData;
 
     [Inject]
@@ -43,5 +45,7 @@ public class BeeTelemetry : MonoBehaviour
             "Distance To Flower: " + _simulationData.Bees[Bee.BeeLable.d].DistanceToFlower.ToString("N4") + " Meters" + "\n" +
             "Simulated Arrival Time: " + _simulationData.Bees[Bee.BeeLable.d].SimulatedArrivalTime.ToString("N4") + "    " +
             "Calculated Arrival Time: " + _simulationData.Bees[Bee.BeeLable.d].CalculatedArrivalTime.ToString("N4");
+
+        _simulationTime.text = "Simulation Time: " + _simulationData.CurrentTime.ToString("N4");
     }
 }

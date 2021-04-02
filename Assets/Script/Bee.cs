@@ -29,6 +29,7 @@ public class Bee : MonoBehaviour
     public float DistanceToFlower { get => _distanceToFlower; set => _distanceToFlower = value; }
     public double SimulatedArrivalTime { get => _simulatedArrivalTime; set => _simulatedArrivalTime = value; }
     public double CalculatedArrivalTime { get => _calculatedArrivalTime; set => _calculatedArrivalTime = value; }
+    public float CurrentTime { get => _currentTime; set => _currentTime = value; }
 
     [Inject]
     private void Construct(Flower flower, SimulationData simulationData)
@@ -51,6 +52,7 @@ public class Bee : MonoBehaviour
         if(_simulationData.Simulate)
         {
             _currentTime += Time.deltaTime;
+            _simulationData.CurrentTime = _currentTime;
 
             switch (_simulationData.SimulationType)
             {
@@ -124,5 +126,6 @@ public class Bee : MonoBehaviour
         _currentTime = 0;
         _arrived = false;
         _simulatedArrivalTime = 0;
+        _simulationData.CurrentTime = 0;
     }
 }
